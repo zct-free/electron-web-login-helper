@@ -1,0 +1,7 @@
+node_modules
+dist
+dist-verify
+out
+.screenshots
+.trae-html-share-packages
+*.log

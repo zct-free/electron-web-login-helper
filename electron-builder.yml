@@ -1,0 +1,30 @@
+appId: com.webloginhelper.app
+productName: WebLoginHelper
+
+directories:
+  output: dist
+  buildResources: build
+
+# Electron 二进制下载镜像（默认走 github release，国内网络会 DNS 失败）
+electronDownload:
+  mirror: https://npmmirror.com/mirrors/electron/
+
+files:
+  - out/**
+  - package.json
+  - '!**/*.map'
+
+win:
+  target:
+    - nsis
+  executableName: WebLoginHelper
+
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: always
+  shortcutName: ${productName}
+  artifactName: ${name}-${version}-setup.${ext}
+
+npmRebuild: false
